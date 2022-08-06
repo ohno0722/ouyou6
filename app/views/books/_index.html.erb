@@ -22,11 +22,12 @@
           ♥<%= book.favorites.count %> </td>
             <% end %>
             <% else %>
-           <td><%= link_to book_favorites_path(book), method: :post do %>
+          <td><%= link_to book_favorites_path(book), method: :post do %>
           ♡<%= book.favorites.count %> </td>
             <% end %>
           <% end %>
 
+          <td>コメント数：<%= book.book_comments.count %></td>
       </tr>
     <% end %>
   </tbody>
