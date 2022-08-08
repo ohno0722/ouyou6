@@ -1,0 +1,25 @@
+<% if @range == "User" %>
+<h2>Users search for <%= @word %></h2>
+<% else %>
+<h2>Books search for <%= @word %></h2>
+<% end %>
+
+<table class="table table-hover table-inverse">
+
+  <% if @range == "User" %>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.name %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  <% else %>
+
+    <tbody>
+
+      <%= render 'books/index',books: @books %>
+
+    </tbody>
+  <% end %>
+</table>
